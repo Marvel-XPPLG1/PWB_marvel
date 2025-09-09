@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Form Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white text-center">
+          <h2 class="mb-0">Buat Akun Baru</h2>
+        </div>
+        <div class="card-body bg-white">
+          <h4 class="text-success mb-4">Sign Up Form</h4>
+
+          <!-- Alert -->
+          <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+            ✅ Akun berhasil dibuat!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <form id="signupForm">
+            <!-- First Name -->
+            <div class="mb-3">
+              <label for="firstName" class="form-label text-primary">First Name</label>
+              <input type="text" class="form-control border-primary" id="firstName" placeholder="First name" required>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-3">
+              <label for="lastName" class="form-label text-primary">Last Name</label>
+              <input type="text" class="form-control border-primary" id="lastName" placeholder="Last name" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="mb-3">
+              <label class="form-label text-primary d-block">Gender</label>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="male" name="gender" value="Male" required>
+                <label for="male" class="form-check-label">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" id="female" name="gender" value="Female">
+                <label for="female" class="form-check-label">Female</label>
+              </div>
+            </div>
+
+            <!-- Nationality -->
+            <div class="mb-3">
+              <label for="Nationality" class="form-label text-primary">Nationality</label>
+              <select class="form-select border-primary" id="Nationality" name="Nationality" required>
+                <option value="">-- Pilih --</option>
+                <option value="Id">Indonesia</option>
+                <option value="eng">English</option>
+              </select>
+            </div>
+
+            <!-- Language Spoken -->
+            <div class="mb-3">
+              <label class="form-label text-primary d-block">Language Spoken</label>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="langIndo">
+                <label class="form-check-label" for="langIndo">Bahasa Indonesia</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="langEng">
+                <label class="form-check-label" for="langEng">English</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="langOther">
+                <label class="form-check-label" for="langOther">Other</label>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="mb-3">
+              <label for="bio" class="form-label text-primary">Bio</label>
+              <textarea class="form-control border-primary" id="bio" rows="4" placeholder="Write something about yourself..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg">✅ Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const form = document.getElementById("signupForm");
+      const alertBox = document.getElementById("successAlert");
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        alertBox.classList.remove("d-none"); // tampilkan alert
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
